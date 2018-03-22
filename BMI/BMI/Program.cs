@@ -9,49 +9,45 @@ namespace BMI
     class Program
     {
         static void Main(string[] args)
-        {
-            // double rate = 0;
-            // 顯示匯率
-            // Console.WriteLine("目前匯率值 : {0} ", rate);
-
-            // 輸入金額
-            // Console.Write("請輸入烏干達幣金額 : ");
-            // string input = Console.ReadLine();
-
-            // 換算
-            // double total = double.Parse(input) * rate;
-
-            // 結果
-            // Console.WriteLine("換算成鬼島幣金額 :{0}", +total);
-            
-            // BMI = 體重(公斤) /身高*身高(公尺*公尺)
+        {   
             double height = 0 ;
             double weight = 0 ;
             double bmi = 0 ;
             
+            // 輸入身高
             Console.WriteLine("請輸入身高(公尺) : {0} ", height);
             string height = Console.ReadLine();
            
+            // 輸入體重
             Console.WriteLine("請輸入體重(公斤) : {0} ", weight);
             string weight = Console.ReadLine();
-           
-            
+        
+            // BMI = 體重(公斤) /身高*身高(公尺*公尺)
             double h = double.Parse(height)*double.Parse(height);
             double bmi = double.Parse(weight) / h;
             
+            // 輸出結果
             Console.WriteLine("你的BMI值為: {0}", + bmi);
             Console.ReadLine();    
-                
-            if 18.5≦bmi＜24
-            
-            
-            
-            
-            
-            
-            
-            
-                
+             
+            // 顯示健康狀況
+            if ( bmi < 18.5 )
+	        {
+	        Console.WriteLine("過輕");
+	        Console.ReadLine();
+	        }
+
+            else if ( bmi >= 18.5 || bmi <24 )
+	        {
+	        Console.WriteLine("正常");
+	        Console.ReadLine();
+	        }
+
+            else if ( bmi >= 24 )
+	        {
+	        Console.WriteLine("胖");
+	        Console.ReadLine();
+	        }   
         }
     }
 }
